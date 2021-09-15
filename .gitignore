@@ -1,4 +1,9 @@
 node_modules
-dist/
+dist
+build
+win64-818858
 *.log
+*.tgz
+*.zip
 .vscode
+.env
