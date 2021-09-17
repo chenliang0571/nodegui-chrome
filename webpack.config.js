@@ -6,6 +6,8 @@ module.exports = {
   mode: process.NODE_ENV || "development",
   entry: "./src",
   target: "node",
+  // externals: { 'node-pre-gyp': 'commonjs node-pre-gyp' },
+  externals: { 'sqlite3': 'commonjs sqlite3' },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js"
@@ -31,6 +33,7 @@ module.exports = {
         use: [
           {
             loader: "native-addon-loader",
+            // loader: "node-loader",
             options: { name: "[name]-[hash].[ext]" }
           }
         ]
